@@ -1,0 +1,12 @@
+{
+  "name": "penguin-vr",
+  "version": "1.0.0",
+  "description": "Penguin Tag – Gorilla Tag inspired free WebXR multiplayer penguin game",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

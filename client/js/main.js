@@ -716,9 +716,52 @@ renderer.setAnimationLoop(function gameLoop() {
   }
 
   sendState();
-  renderer.render(scene, camera);
+ init().then(() => {
+  renderer.setAnimationLoop(function gameLoop() {
+    const dt = Math.min(clock.getDelta(), 0.05);
+
+    if (!isVR) {
+      if (keys['KeyW']) playerBody.velocity.z -= 7 * dt;
+      if (keys['KeyS']) playerBody.velocity.z += 7 * dt;
+      if (keys['KeyA']) playerBody.velocity.x -= 7 * dt;
+      if (keys['KeyD']) playerBody.velocity.x += 7 * dt;
+      if (keys['Space'] && playerBody.position.y < BODY_RADIUS + 0.5) playerBody.velocity.y = 5.5;
+    }
+
+    world.step(1 / 60, dt, 3);
+    updateLocomotion(dt);
+
+    if (!isVR) {
+      camera.position.x = playerBody.position.x;
+      camera.position.y = playerBody.position.y + 0.95;
+      camera.position.z = playerBody.position.z;
+    } else {
+      const xrCamera = renderer.xr.getCamera();
+      const headPos = new THREE.Vector3();
+      xrCamera.getWorldPosition(headPos);
+      playerBody.position.x += (headPos.x - playerBody.position.x) * 0.4;
+      playerBody.position.z += (headPos.z - playerBody.position.z) * 0.4;
+      if (playerBody.position.y < -5) {
+        playerBody.position.set(0, 3, 0);
+        playerBody.velocity.set(0, 0, 0);
+      }
+    }
+
+    for (const [, r] of remotePlayers) {
+      r.mesh.position.lerp(r.targetPos, 0.22);
+    }
+
+    if (localPlayer.isOwner && ownerStaff) {
+      if (input.right.gripping) {
+        ownerStaff.visible = true;
+        rightController.getWorldPosition(ownerStaff.position);
+        ownerStaff.position.y += 0.25;
+      } else {
+        ownerStaff.visible = false;
+      }
+    }
+
+    sendState();
+    renderer.render(scene, camera);
+  });
 });
-
-
-
-init();

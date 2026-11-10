@@ -718,3 +718,7 @@ renderer.setAnimationLoop(function gameLoop() {
   sendState();
   renderer.render(scene, camera);
 });
+
+
+
+init();

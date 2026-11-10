@@ -1,0 +1,117 @@
+{
+  "hats": [
+    {
+      "id": "hat_crown",
+      "name": "Penguin Crown",
+      "cost": 0,
+      "ownerOnly": true,
+      "rarity": "legendary"
+    },
+    {
+      "id": "hat_beanie",
+      "name": "Winter Beanie",
+      "cost": 50,
+      "rarity": "common"
+    },
+    {
+      "id": "hat_top",
+      "name": "Top Hat",
+      "cost": 200,
+      "rarity": "rare"
+    },
+    {
+      "id": "hat_santa",
+      "name": "Santa Hat",
+      "cost": 150,
+      "seasonal": "christmas",
+      "rarity": "rare"
+    },
+    {
+      "id": "hat_pumpkin",
+      "name": "Pumpkin Hat",
+      "cost": 150,
+      "seasonal": "halloween",
+      "rarity": "rare"
+    }
+  ],
+  "scarves": [
+    {
+      "id": "scarf_red",
+      "name": "Red Scarf",
+      "cost": 30,
+      "rarity": "common"
+    },
+    {
+      "id": "scarf_stripe",
+      "name": "Striped Scarf",
+      "cost": 80,
+      "rarity": "uncommon"
+    }
+  ],
+  "glasses": [
+    {
+      "id": "glasses_round",
+      "name": "Round Specs",
+      "cost": 40,
+      "rarity": "common"
+    },
+    {
+      "id": "glasses_cool",
+      "name": "Cool Shades",
+      "cost": 120,
+      "rarity": "rare"
+    }
+  ],
+  "backpacks": [
+    {
+      "id": "bp_fish",
+      "name": "Fish Backpack",
+      "cost": 100,
+      "rarity": "uncommon"
+    },
+    {
+      "id": "bp_egg",
+      "name": "Egg Carrier",
+      "cost": 250,
+      "rarity": "rare"
+    }
+  ],
+  "trails": [
+    {
+      "id": "trail_snow",
+      "name": "Snow Trail",
+      "cost": 200,
+      "rarity": "rare"
+    },
+    {
+      "id": "trail_ice",
+      "name": "Ice Sparkle",
+      "cost": 300,
+      "rarity": "epic"
+    }
+  ],
+  "companions": [
+    {
+      "id": "comp_chick",
+      "name": "Baby Chick",
+      "cost": 500,
+      "rarity": "epic"
+    },
+    {
+      "id": "comp_owner",
+      "name": "Staff Companion",
+      "cost": 0,
+      "ownerOnly": true,
+      "rarity": "legendary"
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff_penguin",
+      "name": "Penguin Staff",
+      "cost": 0,
+      "ownerOnly": true,
+      "rarity": "legendary"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>Penguin Tag VR</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="ui">
+    <div id="lobby" class="panel">
+      <h1>🐧 Penguin Tag</h1>
+      <p class="subtitle">Gorilla Tag style • Free • WebXR</p>
+      <input id="username" type="text" placeholder="Your penguin name" maxlength="16" />
+      <button id="btn-enter-vr" class="primary">ENTER VR</button>
+      <button id="btn-desktop">Desktop Preview (limited)</button>
+      <div class="row">
+        <input id="room-code" type="text" placeholder="Room code" maxlength="6" />
+        <button id="btn-join">Join</button>
+        <button id="btn-create">Create Public</button>
+      </div>
+      <div id="server-list"></div>
+      <p id="status">Ready</p>
+      <p class="hint">Quest 3 / 3S: Open in Meta Browser → Enter VR. Hand locomotion only (no joysticks).</p>
+    </div>
+    <div id="hud" class="hidden">
+      <div id="pb">PB: 0</div>
+      <div id="mode-label">Casual</div>
+      <div id="timer"></div>
+      <button id="btn-report" class="small">REPORT</button>
+    </div>
+  </div>
+  <div id="vr-ui"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

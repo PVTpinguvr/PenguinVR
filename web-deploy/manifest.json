@@ -1,0 +1,11 @@
+{
+  "name": "Penguin Tag VR",
+  "short_name": "PenguinTag",
+  "description": "Free penguin VR multiplayer – Gorilla Tag style",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0a1628",
+  "theme_color": "#4fc3f7",
+  "vr_supported": true
+}
